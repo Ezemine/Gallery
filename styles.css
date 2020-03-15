@@ -1,0 +1,118 @@
+* 
+{
+    box-sizing: border-box;
+
+    user-select:none; /*not for links*/
+}
+html, body, div, img 
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+body 
+{
+    line-height: 1;
+}
+
+.container
+{
+    /* display:flex;
+    flex-wrap:wrap;
+    padding:5px;
+    justify-content: center; */
+
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.container > div
+{
+    display: flex; 
+    flex-basis: calc(50% - 40px);  
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container > div > div
+{
+    /* display: flex;
+    justify-content: center;
+    flex-direction: row; */
+}
+
+.project
+{
+    margin: 20px;
+    color: black;
+    background-size: cover;
+    background-position: center;
+    text-indent: -10000%; /*Completely remove text*/
+    opacity: 60%;
+    border-radius: 5px;
+
+    /* Flex */
+    justify-content: center;
+    flex:1;
+    transition: opacity 2s;
+    /* align-items: space-around; */
+    /* flex-wrap: wrap; */
+    
+    
+    align-items: center;
+    height: calc(50vh - 50px);
+    width: calc(50%vw - 50px);
+}
+
+.project1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
+.project2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
+.project3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
+.project4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
+
+/* img
+{
+    margin: 10px;
+    transition: all 3s;
+} */
+
+/* Div hover, img becomes bigger and shows title */
+.project:hover
+{
+    transform: scale(1.1);
+    opacity: 100%;
+}
+
+.project:hover h2
+{
+    text-indent:0;
+    cursor: pointer;
+}
+
+.container > .active
+{
+    order: -1;
+    text-indent:0;
+    font-size: 40px;
+    opacity: 100%;
+    flex-basis: 90%;
+    height:80vh;
+}
+
+.container > .inactive
+{
+    height:10vh;
+    width: calc(30vw - 20px);
+    /* fix width to show in 1 row */
+}
+
+.project.inactive
+{
+    width: calc(30vw - 20px);
+}
